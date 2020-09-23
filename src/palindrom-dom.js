@@ -59,7 +59,7 @@ const PalindromDOM = (() => {
             /* in some cases, people emit redirect requests before `listen` is called */
             this.element.addEventListener(
                 'palindrom-redirect-pushstate',
-                this.morphUrlEventHandler
+                this.historyHandler
             );
 
             if ('scrollRestoration' in history) {
