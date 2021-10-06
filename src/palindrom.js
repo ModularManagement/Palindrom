@@ -313,7 +313,8 @@ const Palindrom = (() => {
                 const res = await this.xhr(
                     url,
                     'application/json-patch+json',
-                    msg
+                    msg,
+                    true
                 );
                 this.onReceive(
                     res.data,
