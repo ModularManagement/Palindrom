@@ -1,4 +1,4 @@
-/*! Palindrom, version: 6.0.0-1-JSONPatcherProxy-0.1.0-0-no-es-modules */
+/*! Palindrom, version: 6.0.0-2-JSONPatcherProxy-0.1.0-0-no-es-modules */
 var PalindromDOM =
 /******/ (function(modules) { // webpackBootstrap
 /******/ 	// The module cache
@@ -1961,7 +1961,7 @@ console.log('Palindrom#morphing-pr');
  */
 
 /* this variable is bumped automatically when you call npm version */
-const palindromVersion = '6.0.0-JSONPatcherProxy-0.1.0-0-no-es-modules';
+const palindromVersion = '6.0.0-2-JSONPatcherProxy-0.1.0-0-no-es-modules';
 
 const CLIENT = 'Client';
 const SERVER = 'Server';
@@ -2269,7 +2269,8 @@ const Palindrom = (() => {
                 const res = await this.xhr(
                     url,
                     'application/json-patch+json',
-                    msg
+                    msg,
+                    true
                 );
                 this.onReceive(
                     res.data,
