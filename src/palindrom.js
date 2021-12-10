@@ -5,7 +5,7 @@
  */
 
 /* this variable is bumped automatically when you call npm version */
-const palindromVersion = '6.0.0-2-JSONPatcherProxy-0.1.0-0-no-es-modules';
+const palindromVersion = '6.0.0-4-JSONPatcherProxy-0.1.0-0-no-es-modules';
 
 const CLIENT = 'Client';
 const SERVER = 'Server';
@@ -529,7 +529,7 @@ const Palindrom = (() => {
          * @returns {XMLHttpRequest} performed XHR
          */
         async xhr(url, accept, data, setReferer) {
-            const method = data ? 'PATCH' : 'GET';
+            const method = data ? 'PATCH' : 'POST';
             const headers = {};
             let responsePromise;
 
@@ -542,8 +542,8 @@ const Palindrom = (() => {
             if (this.remoteUrl && setReferer) {
                 headers['X-Referer'] = this.remoteUrl.pathname;
             }
-            if (method === 'GET') {
-                responsePromise = axios.get(url, {
+            if (method === 'POST') {
+                responsePromise = axios.post(url, {}, {
                     headers
                 });
             } else {
