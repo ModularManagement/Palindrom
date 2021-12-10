@@ -529,7 +529,7 @@ const Palindrom = (() => {
          * @returns {XMLHttpRequest} performed XHR
          */
         async xhr(url, accept, data, setReferer) {
-            const method = data ? 'PATCH' : 'GET';
+            const method = data ? 'PATCH' : 'POST';
             const headers = {};
             let responsePromise;
 
@@ -542,8 +542,8 @@ const Palindrom = (() => {
             if (this.remoteUrl && setReferer) {
                 headers['X-Referer'] = this.remoteUrl.pathname;
             }
-            if (method === 'GET') {
-                responsePromise = axios.get(url, {
+            if (method === 'POST') {
+                responsePromise = axios.post(url, {}, {
                     headers
                 });
             } else {
